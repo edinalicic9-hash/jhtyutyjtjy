@@ -1,0 +1,105 @@
+{
+	"geode": "5.11.2",
+	"gd": {
+		"win": "2.2081"
+	},
+	"version": "v1.0.0",
+	"id": "yourname.input-buffer-settings",
+	"name": "Input Buffer (Configurable)",
+	"developer": "YourName",
+	"description": "Tick-based press and release input buffer with per-gamemode settings.",
+	"tags": ["gameplay", "utility"],
+	"settings": {
+		"title-general": {
+			"type": "title",
+			"name": "General"
+		},
+		"buffer-enabled": {
+			"type": "bool",
+			"name": "Enabled",
+			"description": "Master switch for the input buffer.",
+			"default": true
+		},
+		"apply-player2": {
+			"type": "bool",
+			"name": "Apply to Player 2",
+			"description": "Also buffer Player 2's inputs (dual / 2-player mode).",
+			"default": true
+		},
+		"debug-log": {
+			"type": "bool",
+			"name": "Debug logging",
+			"description": "Write a line to the Geode log whenever a delayed release is applied.",
+			"default": false
+		},
+		"title-ticks": {
+			"type": "title",
+			"name": "Buffer length per gamemode (ticks)"
+		},
+		"ground-ticks": {
+			"type": "int",
+			"name": "Cube / Ball / Robot / Spider",
+			"description": "A press made while airborne is held for at least this many ticks, so a jump pressed slightly before landing still fires on landing. 0 = off. At 240 ticks/sec: 4 ticks = 1 frame @ 60 FPS.",
+			"default": 2,
+			"min": 0,
+			"max": 32,
+			"control": {
+				"arrows": true,
+				"slider": true,
+				"input": true
+			}
+		},
+		"wave-ticks": {
+			"type": "int",
+			"name": "Wave",
+			"description": "Minimum hold time for a wave press. A release that comes sooner is delayed until this many ticks have passed. 0 = off.",
+			"default": 2,
+			"min": 0,
+			"max": 32,
+			"control": {
+				"arrows": true,
+				"slider": true,
+				"input": true
+			}
+		},
+		"ship-ticks": {
+			"type": "int",
+			"name": "Ship",
+			"description": "Minimum hold time for a ship press. 0 = off (recommended: extra hold time means extra thrust).",
+			"default": 0,
+			"min": 0,
+			"max": 32,
+			"control": {
+				"arrows": true,
+				"slider": true,
+				"input": true
+			}
+		},
+		"ufo-ticks": {
+			"type": "int",
+			"name": "UFO",
+			"description": "Minimum hold time for a UFO press. 0 = off.",
+			"default": 0,
+			"min": 0,
+			"max": 32,
+			"control": {
+				"arrows": true,
+				"slider": true,
+				"input": true
+			}
+		},
+		"swing-ticks": {
+			"type": "int",
+			"name": "Swing",
+			"description": "Minimum hold time for a swing press. 0 = off.",
+			"default": 0,
+			"min": 0,
+			"max": 32,
+			"control": {
+				"arrows": true,
+				"slider": true,
+				"input": true
+			}
+		}
+	}
+}
